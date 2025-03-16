@@ -25,17 +25,18 @@ function addRiskItem(riskName, riskLevel, department) {
     departmentElement.textContent = `Department: ${department}`;
     card.appendChild(departmentElement);
 
-    // Create Remove Button Card
-    const removeButton = document.createElement("button");
-    removeButton.textContent = "Remove";
-    removeButton.classList.add("removeButton")
+    // Task 4 Create Resolve Button Card
+    const resolveButton = document.createElement("button");
+    resolveButton.textContent = "Resolve";
+    resolveButton.classList.add("resolveButton")
 
-    removeButton.onclick = function() {
+
+    resolveButton.onclick = function() {
         container.removeChild(card);
 
     };
 
-    card.appendChild(removeButton);
+    card.appendChild(resolveButton);
 
 container.appendChild(card);
 
@@ -44,3 +45,9 @@ container.appendChild(card);
 // Test Cases for Task 2
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+
+
+// Test Case for Task 3
+addRiskItem("Market Fluctuations", "High", "Finance");
+
+
