@@ -10,6 +10,17 @@ function addRiskItem(riskName, riskLevel, department) {
     const card = document.createElement("div");
     card.classList.add("Risk-Card");
 
+
+    // Task 4 assign background Color
+
+    if (riskLevel === "Low") {
+        card.style.backgroundColor = "green";
+    } else if (riskLevel === "Medium") {
+        card.style.backgroundColor = "yellow";
+    } else if (riskLevel === "High") {
+        card.style.backgroundColor = "red";
+    }
+
     // Create Risk Name on Card
     const riskNameElement = document.createElement("h3");
     riskNameElement.textContent = `Risk Name: ${riskName}`;
@@ -51,3 +62,6 @@ addRiskItem("Supply Chain Disruption", "Medium", "Operations");
 addRiskItem("Market Fluctuations", "High", "Finance");
 
 
+// Test Cases for Task 4
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
