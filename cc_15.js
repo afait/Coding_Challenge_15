@@ -21,6 +21,10 @@ function addRiskItem(riskName, riskLevel, department) {
         card.style.backgroundColor = "red";
     }
 
+    // Task 5
+
+    card.setAttribute("data-risk-level", riskLevel);
+
     // Create Risk Name on Card
     const riskNameElement = document.createElement("h3");
     riskNameElement.textContent = `Risk Name: ${riskName}`;
@@ -53,6 +57,41 @@ container.appendChild(card);
 
 };
 
+
+
+// Task 5
+
+function increaseRiskLevel() {
+    const cards = document.querySelectorAll(".Risk-Card");
+
+    // Create a card to increase the risk level
+cards.forEach(card => {
+    const riskLevelElement = card.querySelector("p");
+    const currentLevel = card.getAttribute("data-risk-level");
+
+    // Will update risk level from low to medium and change the color accordingly
+    if (currentLevel === "Low") {
+        card.setAttribute("data-risk-level", "Medium");
+        riskLevelElement.textContent = "Risk Level: Medium";
+            card.style.backgroundColor = "yellow";  // Change color to yellow
+        } 
+        // Will update risk level from medium to high and change the color accordingly
+        else if (currentLevel === "Medium") {
+            
+            card.setAttribute("data-risk-level", "High");
+            riskLevelElement.textContent = "Risk Level: High";
+            card.style.backgroundColor = "red";
+    }
+}
+)
+}
+
+// Task 5
+const increaseButton = document.createElement("button");
+increaseButton.textContent = "Increase Risk Levels";
+increaseButton.onclick = increaseRiskLevel;
+document.body.appendChild(increaseButton)
+
 // Test Cases for Task 2
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
@@ -65,3 +104,6 @@ addRiskItem("Market Fluctuations", "High", "Finance");
 // Test Cases for Task 4
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+
+// Test Case for Task 5
+addRiskItem("Employee Retention", "Low", "HR");
