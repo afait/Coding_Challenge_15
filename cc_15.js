@@ -55,6 +55,13 @@ function addRiskItem(riskName, riskLevel, department) {
 
 container.appendChild(card);
 
+
+
+// Task 6
+
+card.onclick = function(event) {
+    event.stopPropagation();
+}
 };
 
 
